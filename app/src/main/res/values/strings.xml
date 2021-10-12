@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">App-Widgets</string>
+    <string name="widgets">Widgets</string>
+    <string name="widget_example">Widget Example</string>
 </resources>
