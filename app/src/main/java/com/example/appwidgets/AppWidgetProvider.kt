@@ -14,11 +14,18 @@ open class AppWidgetProvider : AppWidgetProvider() {
         appWidgetIds: IntArray?
     ) {
         for (appWidgetId in appWidgetIds!!) {
-            val intent = Intent(context, MainActivity::class.java)
-            val pendingIntent = PendingIntent.getActivity(context, 0 ,intent,0)
+            //remote view
             val views = RemoteViews(context!!.packageName, R.layout.app_widget)
-            views.setOnClickPendingIntent(R.id.app_widget_btn,pendingIntent)
-            appWidgetManager!!.updateAppWidget(appWidgetId,views)
+            //intent
+            val intent = Intent(context, MainActivity::class.java)
+            //pending intent on view
+            val pendingIntent = PendingIntent.getActivity(context, 0, intent, 0)
+
+            //pending intent on view
+            views.setOnClickPendingIntent(R.id.app_widget_btn, pendingIntent)
+
+            //update the widget
+            appWidgetManager!!.updateAppWidget(appWidgetId, views)
         }
     }
 }
